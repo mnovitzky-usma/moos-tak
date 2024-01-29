@@ -72,6 +72,8 @@ def gen_cot(data): # Generate the COT messages using parsed NAME, LAT, LON data 
         root.set("type", "a-f-S-120700") #https://www.mitre.org/sites/default/files/pdf/09_4937.pdf
     elif name.startswith("red"):
         root.set("type", "a-h-S-120700")
+    else 
+        root.set("type", "t-x-d-d")
     root.set("uid", "AISC_OAI_" + name) # 
     root.set("how", "m-g")
     root.set("time", pytak.cot_time())
