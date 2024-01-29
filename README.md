@@ -21,3 +21,15 @@ Build the Docker container with the following command in the `moos-tak` director
 
 ```bash
 sudo docker build -t moos-tak .
+```
+
+## Using the Software
+`moos-tak` subscribes to MOOSDB NODE_REPORT messages and sends CoT messages as friendly or hostile based on the agents name (i.e. if the name starts with 'blue' or 'red'). If the agents do not have a name starting with blue or red they will be identified as a neutral CoT message. 
+
+Default IP address is tcp://137.184.101.150:8087
+
+1. Start a moos simulation, the one used for this repo is ./launch demo in /moos-ivp-aquaticus/missions/jervis-2023.
+2. Run the following in your `moos-tak` directory
+```bash
+sudo docker run --network host moos-tak
+```
